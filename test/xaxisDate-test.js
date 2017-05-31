@@ -1,7 +1,7 @@
 var tape = require("tape"),
-    foo = require("../");
+    axis = require("../");
 
 tape("Should return 42", function(test) {
-  test.equal(foo.foo(), 42);
+  test.equal(axis.xaxisDate().interval(), 0);
   test.end();
 });
