@@ -1,15 +1,21 @@
-# d3-foo
+# xaxisDate
 
-YOUR DESCRIPTION HERE. Replace all instances of `foo` in this file with the name of your new plugin.
+Pre styled and positioned date x-axis for use with the FT's g-chartframe architecture as part of the Visual Vocabulary. As the name suggests it creates a date x-axis that can be appended to the .plot obejct in the g-chartframe hopefully eliminating the need to code another standard x-axis.
+
+Will also work with other builds where the axis is called into an svg.
+
+
+### Prerequisites
+The FT axis styles---add the folowwing link in your index file header
+
+The [d3 library](https://d3js.org/) is already installed in the build
 
 ## Installing
+### Manually install
 
-If you use NPM, `npm install d3-foo`. Otherwise, download the [latest release](https://github.com/d3/d3-foo/releases/latest).
+Add the following line to the header of you index.html file.
 
-## API Reference
+``` html
+<script src="https://rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js"> </script>
 
-YOUR API DOCUMENTATION HERE. Use bold for symbols (such as constructor and method names) and italics for instances. See the other D3 modules for examples.
-
-<a href="#foo" name="foo">#</a> <b>foo</b>()
-
-Computes the answer to the ultimate question of life, the universe, and everything.
+```
