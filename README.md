@@ -19,3 +19,14 @@ Add the following line to the header of you index.html file.
 <script src="https://rawgit.com/ft-interactive/g-xaxisdate/master/build/g-xaxisdate.js"> </script>
 
 ```
+### NPM install
+Not yet deployed
+
+## Getting started
+Add the following code to your index.js to append a default y-axis to the .plot object (grey here but is not normally visible)
+
+```
+let myAxis = gAxis.yaxisLinear;
+currentFrame.plot()
+	.call(myYAxis);
+```
