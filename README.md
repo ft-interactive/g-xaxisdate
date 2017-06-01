@@ -55,10 +55,10 @@ myXAxis
 #myAxis<b>.height([Number])</b> Defines the distance the x-axis is positioned from the top of its container
 
 #myAxis<b>.interval([String])</b> Defines the tick interval on the axis. By default this is set to "lustrum" meaning every five years. It can be set to:
-"decade" -- every ten years
-"lustrum" -- every five years
-"years" -- every year
-"quarters" -- every 3 months (Not the label is the month name not Q1, Q2, Q3 etc)
-"months" -- every month
-"weeks" -- every week
-"days" -- every day
+*"decade" -- every ten years
+*"lustrum" -- every five years
+*"years" -- every year
+*"quarters" -- every 3 months (Not the label is the month name not Q1, Q2, Q3 etc)
+*"months" -- every month
+*"weeks" -- every week
+*"days" -- every day
