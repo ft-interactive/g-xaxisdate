@@ -16,13 +16,13 @@ export default function() {
             .tickSize(rem*0.75)
             .ticks(getTicks(interval))
             .tickFormat(tickFormat(interval))
-            .scale(xScale)
+            .scale(scale)
 
         const xMinor=d3.axisBottom()
             .tickSize(rem*.3)
             .ticks(getTicksMinor(interval))
             .tickFormat("")
-            .scale(xScale)
+            .scale(scale)
 
         const xLabel = parent.append("g")
             .attr("class","axis xAxis")
