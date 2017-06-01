@@ -64,13 +64,13 @@ myXAxis
  * "days" -- every day
 
  #myAxis<b>.minorAxis([Boolean])</b> Switches the display of the minor axis on or off (see examples). Defailt is treu (on) Depending on the <b>.interval</b> setting the minor axis will deiplay tick lines in the following increments
-  * "decade" -- minor axis ticks in years
- * "lustrum" -- minor axis ticks in years
- * "years" -- minor axis ticks in months
- * "quarters" -- minor axis ticks in months
- * "months" -- minor axis ticks in weeks
- * "weeks" -- minor axis ticks in days
- * "days" -- minor axis ticks in seconds
+  * "decade" -- minor axis ticks show years
+ * "lustrum" -- minor axis ticks show years
+ * "years" -- minor axis ticks show months
+ * "quarters" -- minor axis ticks show months
+ * "months" -- minor axis ticks show weeks
+ * "weeks" -- minor axis ticks show days
+ * "days" -- minor axis ticks show seconds
 
 #myAxis<b>.rem([Number])</b> Used to set the tick size, set to 10 by default
 
