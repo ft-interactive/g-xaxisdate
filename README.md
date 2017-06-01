@@ -48,4 +48,17 @@ myXAxis
 
 ## API reference
 
+#myAxis<b>.domain([Array])</b> defines the axis domain in the same way as you would when creating a normal d3.scaleTime(). If no <b>.domain()</b> is defined the default is [Jan 01 1970,Jun 01 2017]
 
+#myAxis<b>.range([Array])</b> defines the axis  range in the same way as you would when creating a normal d3.scaleLinear(). If no <b>.range()</b> is defined the default is [0,220])
+
+#myAxis<b>.height([Number])</b> Defines the distance the x-axis is positioned from the top of its container
+
+#myAxis<b>.interval([String])</b> Defines the tick interval on the axis. By default this is set to "lustrum" meaning every five years. It can be set to:
+"decade" -- every ten years
+"lustrum" -- every five years
+"years" -- every year
+"quarters" -- every 3 months (Not the label is the month name not Q1, Q2, Q3 etc)
+"months" -- every month
+"weeks" -- every week
+"days" -- every day
