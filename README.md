@@ -58,7 +58,7 @@ myXAxis
  * "decade" -- every ten years
  * "lustrum" -- every five years
  * "years" -- every year
- * "quarters" -- every 3 months (Not the label is the month name not Q1, Q2, Q3 etc)
+ * "quarters" -- every 3 months (Note the label is the month name not Q1, Q2, Q3 etc)
  * "months" -- every month
  * "weeks" -- every week
  * "days" -- every day
