@@ -142,4 +142,4 @@ currentFrame.plot()
     .call(myXAxis);
 ```
 
-![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example02.png)
+![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example03.png)
