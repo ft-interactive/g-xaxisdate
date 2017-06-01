@@ -120,3 +120,26 @@ currentFrame.plot()
 ```
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example02.png)
+
+Defined date range from Jan 1 2017 to June 16 2017, with every month labeled and a minot axis
+
+```
+const myXAxis = xaxisDate();//sets up yAxis
+const currentFrame = frame[frameName];
+
+let mindate = new Date(2017,1,1);
+let maxdate = new Date(2017,6,16);
+
+myXAxis
+	.height(currentFrame.dimension().height)
+	.domain([mindate,maxdate])
+	.range([0,currentFrame.dimension().width])
+	.interval("months")
+	.minorAxis(true)
+	.rem(currentFrame.rem())
+
+currentFrame.plot()
+    .call(myXAxis);
+```
+
+![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example02.png)
