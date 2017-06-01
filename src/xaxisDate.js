@@ -1,9 +1,11 @@
 import * as d3 from 'd3';
 
 export default function() {
-	let xScale = d3.scaleTime();
+	let scale = d3.scaleTime()
+        .domain([0,10000])
+        .range([120,0]);
     let plotDim = {};
-    let interval ="months";
+    let interval ="years";
     let rem=10;
     let minorAxis = false;
 
@@ -78,10 +80,18 @@ export default function() {
         }[interval]
     }
 
-    axis.xScale = (d)=>{
+    axis.scale = (d)=>{
         xScale = d;
         return axis;
     }
+    axis.domain = (d)=>{
+        yScale.domain(d);
+        return axis;
+    };
+    axis.range = (d)=>{
+        yScale.range(d);
+        return axis;
+    };
     axis.plotDim = (d)=>{
         plotDim = d;
         return axis;
