@@ -6,7 +6,7 @@ export default function() {
     let scale = d3.scaleTime()
         .domain([mindate,maxdate])
         .range([0,120]);
-    let height = {};
+    let height = 100;
     let interval ="decade";
     let rem=10;
     let minorAxis = false;
