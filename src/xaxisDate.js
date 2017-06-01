@@ -5,14 +5,14 @@ export default function() {
     let maxdate = new Date(2017,6,1);
     let scale = d3.scaleTime()
         .domain([mindate,maxdate])
-        .range([0,120]);
+        .range([0,220]);
     let height = 100;
     let interval ="decade";
     let rem=10;
-    let minorAxis = false;
+    let minorAxis = true;
 
     function axis(parent) {
-        var parseDate = d3.timeParse("%d/%m")
+        var parseDate = d3.timeParse("%d/%m/%Y")
 
         const xAxis =d3.axisBottom()
             .tickSize(rem*0.75)
