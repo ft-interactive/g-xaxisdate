@@ -100,6 +100,8 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example01.png)
 
+### Every five years
+
 Defined date range from Jan 1 2005 to June 1 2017, with every five years labeled and a minot axis
 
 ```
