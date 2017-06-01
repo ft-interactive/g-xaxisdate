@@ -7,10 +7,10 @@
     function xaxisDate() {
         let mindate = new Date(1888,2,13);
         let maxdate = new Date(2017,6,1);
-    	let scale = d3.scaleTime()
+        let scale = d3.scaleTime()
             .domain([mindate,maxdate])
             .range([0,120]);
-        let plotDim = {};
+        let height = {};
         let interval ="decade";
         let rem=10;
         let minorAxis = false;
@@ -30,17 +30,19 @@
                 .tickFormat("")
                 .scale(scale)
 
+            console.log(scale.range()[1])
+
             const xLabel = parent.append("g")
                 .attr("class","axis xAxis")
                 .call(xAxis)
-            xLabel.attr("transform","translate(0,"+(scale.range([1]))+")");
+            xLabel.attr("transform","translate(0,"+(height)+")");
 
             if (minorAxis) {
                 const xLabelMinor = parent.append("g")
                 .attr("class","axis baseline")
                 .call(xMinor)
                 
-                xLabelMinor.attr("transform","translate(0,"+(plotDim.height)+")");
+                xLabelMinor.attr("transform","translate(0,"+(height)+")");
             }
 
             let ticks = xLabel.selectAll(".tick");
@@ -98,8 +100,8 @@
             scale.range(d);
             return axis;
         };
-        axis.plotDim = (d)=>{
-            plotDim = d;
+        axis.height = (d)=>{
+            height = d;
             return axis;
         }
         axis.interval = (d)=>{
@@ -107,7 +109,7 @@
             return axis;
         }
         axis.rem = (d)=>{
-        	if(!d) return rem;
+            if(!d) return rem;
             rem = d;
             return axis;
         }
