@@ -68,7 +68,7 @@ myXAxis
  * "lustrum" -- minor axis ticks show years
  * "years" -- minor axis ticks show months
  * "quarters" -- minor axis ticks show months
- * "months" -- minor axis ticks show weeks
+ * "months" -- minor axis ticks show days
  * "weeks" -- minor axis ticks show days
  * "days" -- minor axis ticks show seconds
 
