@@ -45,3 +45,7 @@ myXAxis
         .call(myXAxis);
 ```
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/defined.png)
+
+## API reference
+
+
