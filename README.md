@@ -76,6 +76,8 @@ myXAxis
 
 ## Examples
 
+### Every year
+
 Defined date range from Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
 
 ```
