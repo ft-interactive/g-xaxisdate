@@ -24,7 +24,7 @@ Not yet deployed
 
 ## Getting started
 
-<b>Note</b> The <b>.range()</b> of the x-axis is determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
+<b>Note</b> The <b>.range()</b> of the x-axis is determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See the secton on positioning at [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
 
 Add the following code to your index.js to append a default y-axis to the .plot object (grey here but is not normally visible)
 
