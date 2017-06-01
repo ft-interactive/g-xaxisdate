@@ -54,7 +54,7 @@ myXAxis
 
 #myAxis<b>.height([Number])</b> Defines the distance the x-axis is positioned from the top of its container
 
-#myAxis<b>.interval([String])</b> Defines the tick interval on the axis. By default this is set to "lustrum" meaning every five years. It can be set to:
+#myAxis<b>.interval([String])</b> Defines the tick interval on the axis (see examples). By default this is set to "lustrum" meaning every five years. It can be set to:
  * "decade" -- every ten years
  * "lustrum" -- every five years
  * "years" -- every year
@@ -62,3 +62,15 @@ myXAxis
  * "months" -- every month
  * "weeks" -- every week
  * "days" -- every day
+
+ #myAxis<b>.minorAxis([Boolean])</b> Switches the display of the minor axis on or off(see examples. Defailt is treu (on) Depending on the <b>.interval</b> setting the minor axis will deiplay tick lines in the following increments
+  * "decade" -- minor axis ticks in years
+ * "lustrum" -- minor axis ticks in years
+ * "years" -- minor axis ticks in months
+ * "quarters" -- minor axis ticks in months
+ * "months" -- minor axis ticks in weeks
+ * "weeks" -- minor axis ticks in days
+ * "days" -- minor axis ticks in seconds
+
+#myAxis<b>.rem([Number])</b> Used to set the tick size, set to 10 by default
+
