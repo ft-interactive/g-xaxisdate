@@ -5,11 +5,13 @@
 }(this, function (exports,d3) { 'use strict';
 
     function xaxisDate() {
+        let mindate = new Date(1888,2,13);
+        let maxdate = new Date(2017,6,1);
     	let scale = d3.scaleTime()
-            .domain([0,10000])
-            .range([120,0]);
+            .domain([mindate,maxdate])
+            .range([0,120]);
         let plotDim = {};
-        let interval ="years";
+        let interval ="decade";
         let rem=10;
         let minorAxis = false;
 
