@@ -81,15 +81,15 @@ export default function() {
     }
 
     axis.scale = (d)=>{
-        xScale = d;
+        scale = d;
         return axis;
     }
     axis.domain = (d)=>{
-        yScale.domain(d);
+        scale.domain(d);
         return axis;
     };
     axis.range = (d)=>{
-        yScale.range(d);
+        scale.range(d);
         return axis;
     };
     axis.plotDim = (d)=>{

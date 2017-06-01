@@ -5,9 +5,11 @@
 }(this, function (exports,d3) { 'use strict';
 
     function xaxisDate() {
-    	let xScale = d3.scaleTime();
+    	let scale = d3.scaleTime()
+            .domain([0,10000])
+            .range([120,0]);
         let plotDim = {};
-        let interval ="months";
+        let interval ="years";
         let rem=10;
         let minorAxis = false;
 
@@ -82,10 +84,18 @@
             }[interval]
         }
 
-        axis.xScale = (d)=>{
-            xScale = d;
+        axis.scale = (d)=>{
+            scale = d;
             return axis;
         }
+        axis.domain = (d)=>{
+            scale.domain(d);
+            return axis;
+        };
+        axis.range = (d)=>{
+            scale.range(d);
+            return axis;
+        };
         axis.plotDim = (d)=>{
             plotDim = d;
             return axis;
