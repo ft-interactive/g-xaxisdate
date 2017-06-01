@@ -34,3 +34,14 @@ currentFrame.plot()
 	.call(myYAxis);
 ```
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/default.png)
+
+Set the <b>.range()</b> and the <b>.height()</b> to the dimensions of the <b>.plot()</b> object to correctly position the axis
+```
+myXAxis
+    .height(currentFrame.dimension().height)
+    .range([0,currentFrame.dimension().width])
+
+    currentFrame.plot()
+        .call(myXAxis);
+```
+![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/defined.png)
