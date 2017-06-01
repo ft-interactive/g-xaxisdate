@@ -33,3 +33,4 @@ let myAxis = gAxis.yaxisLinear;
 currentFrame.plot()
 	.call(myYAxis);
 ```
+![alt tag](https://github.com/ft-interactive/g-yaxislinear/blob/master/images/default.png)

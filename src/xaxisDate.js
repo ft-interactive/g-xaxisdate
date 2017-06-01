@@ -6,7 +6,7 @@ export default function() {
     let scale = d3.scaleTime()
         .domain([mindate,maxdate])
         .range([0,220]);
-    let height = 100;
+    let height = 1;
     let interval ="decade";
     let rem=10;
     let minorAxis = true;
@@ -25,8 +25,6 @@ export default function() {
             .ticks(getTicksMinor(interval))
             .tickFormat("")
             .scale(scale)
-
-        console.log(scale.range()[1])
 
         const xLabel = parent.append("g")
             .attr("class","axis xAxis")
