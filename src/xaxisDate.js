@@ -29,7 +29,7 @@ export default function() {
         const xLabel = parent.append("g")
             .attr("class","axis xAxis")
             .call(xAxis)
-        xLabel.attr("transform","translate(0,"+(plotDim.height)+")");
+        xLabel.attr("transform","translate(0,"+(scale.tagnr[1])+")");
 
         if (minorAxis) {
             const xLabelMinor = parent.append("g")
