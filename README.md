@@ -74,3 +74,27 @@ myXAxis
 
 #myAxis<b>.rem([Number])</b> Used to set the tick size, set to 10 by default
 
+## Examples
+
+Defined date range from Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
+
+```
+const myXAxis = xaxisDate();//sets up yAxis
+const currentFrame = frame[frameName];
+
+let mindate = new Date(2005,1,1);
+let maxdate = new Date(2017,6,1);
+
+myXAxis
+	.height(currentFrame.dimension().height)
+	.domain([mindate,maxdate])
+	.range([0,currentFrame.dimension().width])
+	.interval("years")
+	.minorAxis(false)
+
+currentFrame.plot()
+    .call(myXAxis);
+```
+
+![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example1.png)
+
