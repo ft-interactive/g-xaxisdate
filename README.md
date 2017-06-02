@@ -10,6 +10,9 @@ The FT axis styles---add the folowwing link in your index file header
 
 The [d3 library](https://d3js.org/) is already installed in the build
 
+## Before starting
+
+<b>Note</b> The <b>.range()</b> of the x-axis should be determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See the secton on positioning at [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
 
 ## Installing
 ### Manually install
@@ -25,7 +28,7 @@ Not yet deployed
 
 ## Getting started
 
-<b>Note</b> The <b>.range()</b> of the x-axis is determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See the secton on positioning at [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
+<b>Note</b> Examples shown are from the web style frame
 
 Add the following code to your index.js to append a default y-axis to the .plot object (grey here but is not normally visible)
 
