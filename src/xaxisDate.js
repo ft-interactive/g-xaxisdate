@@ -12,7 +12,7 @@ export default function() {
     let minorAxis = true;
 
     function axis(parent) {
-        var parseDate = d3.timeParse("%d/%m/%Y")
+        var parseDate = d3.timeParse("%d/%m")
 
         const xAxis =d3.axisBottom()
             .tickSize(rem*0.75)

@@ -72,8 +72,7 @@ myXAxis
  * "weeks" -- minor axis ticks show days
  * "days" -- minor axis ticks show seconds
 
-#myAxis<b>.rem([Number])</b> Used to set the tick size, set to 10 by default
-
+#myAxis<b>.rem([Number])</b> Easily overlooked but important as it is used to keep the size of the tick proportional to each frame style and is the height of the text used in the subtitle e.g. For the web frames the text height is 18pt whilst on the print frame the text height is 9.6pt. The size of the ticks are calculated as a factor of <b>.rem</b> and so should keep them relative to the labels stop them being disproprtionally large or small
 ## Examples
 
 ### Every year
