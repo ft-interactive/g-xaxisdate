@@ -88,7 +88,7 @@ myXAxis
 
 ### Every year
 
-Defined date range from Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
+From Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -112,7 +112,7 @@ currentFrame.plot()
 
 ### Every five years
 
-Defined date range from Jan 1 2005 to June 1 2017, with every five years labeled and a minot axis
+From Jan 1 2005 to June 1 2017, with every five years labeled and a minot axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -135,7 +135,7 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example02.png)
 
-Defined date range from Jan 1 2017 to June 16 2017, with every month labeled and a minot axis
+From Jan 1 2017 to June 16 2017, with every month labeled and a minot axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -158,7 +158,7 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example03.png)
 
-Defined date range from Jun 1 2017 to June 6 2017, with every day labeled and a minot axis
+From Jun 1 2017 to June 6 2017, with every day labeled and a minot axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
