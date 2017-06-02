@@ -193,7 +193,7 @@ currentFrame.plot()
 
 From Jun 1 2017 to June 6 2017, with no minor axis
 
-<b>Note</b> For use with hourly values such as a share price but not suitavle when crossing the date line to another day. This wil result in 'dead-space'. Use to come
+<b>Note</b> For use with hourly values such as a share price but not suitable when crossing the date line to another day. This wil result in 'dead-space'. Use to come
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
