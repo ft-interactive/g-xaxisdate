@@ -88,7 +88,7 @@ myXAxis
 
 ## Examples
 
-### Every year
+### Yearly
 
 From Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
 
@@ -137,6 +137,8 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example02.png)
 
+### Monthly
+
 From Jan 1 2017 to June 16 2017, with every month labeled and a minot axis
 
 ```
@@ -160,21 +162,25 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example03.png)
 
-From Jun 1 2017 to June 6 2017, with every day labeled and a minot axis
+### Daily
+
+From Jun 1 2017 to June 6 2017, with no minot axis
+
+<b>Note</b> This axis is only suitable for single daily values and not hourly values such as a share price. This will result is 'dead-space'. Use to come
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
 const currentFrame = frame[frameName];
 
 let mindate = new Date(2017,6,1);
-let maxdate = new Date(2017,6,6);
+let maxdate = new Date(2017,6,15);
 
 myXAxis
 	.height(currentFrame.dimension().height)
 	.domain([mindate,maxdate])
 	.range([0,currentFrame.dimension().width])
 	.interval("days")
-	.minorAxis(true)
+	.minorAxis(false)
 	.rem(currentFrame.rem())
 
 currentFrame.plot()
