@@ -14,6 +14,8 @@ The [d3 library](https://d3js.org/) is already installed in the build
 
 <b>Note</b> The <b>.range()</b> of the x-axis should be determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See the secton on positioning at [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
 
+<b>Intraday</b> charts that cross the date threshold will display 'dead-space', please use the intraday-axis and see reference (to come)
+
 ## Installing
 ### Manually install
 
