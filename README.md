@@ -164,7 +164,7 @@ currentFrame.plot()
 
 ### Daily
 
-From Jun 1 2017 to June 6 2017, with no minot axis
+From Jun 1 2017 to June 6 2017, with no minor axis
 
 <b>Note</b> This axis is only suitable for single daily values and not hourly values such as a share price. This will result is 'dead-space'. Use to come
 
@@ -188,3 +188,31 @@ currentFrame.plot()
 ```
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example04.png)
+
+### Houry-intraday
+
+From Jun 1 2017 to June 6 2017, with no minor axis
+
+<b>Note</b> For use with hourly values such as a share price but not suitavle when crossing the date line to another day. This wil result in 'dead-space'. Use to come
+
+```
+const myXAxis = xaxisDate();//sets up yAxis
+    const currentFrame = frame[frameName];
+
+    let mindate = new Date(2017,6,1,8,30);
+    let maxdate = new Date(2017,6,1,15,00);
+
+    myXAxis
+      .height(currentFrame.dimension().height)
+      .domain([mindate,maxdate])
+      .range([0,currentFrame.dimension().width])
+      .interval("hours")
+      .minorAxis(false)
+      .rem(currentFrame.rem())
+
+    currentFrame.plot()
+        .call(myXAxis);
+```
+
+![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example05.png)
+
