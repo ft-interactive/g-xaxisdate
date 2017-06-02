@@ -90,7 +90,7 @@ myXAxis
 
 ### Yearly
 
-From Jan 1 2005 to June 1 2017, with each year labeled and no minot axis
+From Jan 1 2005 to June 1 2017, with each year labeled and no minor axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -114,7 +114,7 @@ currentFrame.plot()
 
 ### Every five years
 
-From Jan 1 2005 to June 1 2017, with every five years labeled and a minot axis
+From Jan 1 2005 to June 1 2017, with every five years labeled and a minor axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -139,7 +139,7 @@ currentFrame.plot()
 
 ### Monthly
 
-From Jan 1 2017 to June 16 2017, with every month labeled and a minot axis
+From Jan 1 2017 to June 16 2017, with every month labeled and a minor axis
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
