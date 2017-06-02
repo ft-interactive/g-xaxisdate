@@ -28,13 +28,14 @@ Not yet deployed
 
 ## Getting started
 
-<b>Note</b> Examples shown are from the web style frame
+<b>Note</b> All examples shown are from the web frame style
 
-Add the following code to your index.js to append a default y-axis to the .plot object (grey here but is not normally visible)
+Add the following code to your index.js to append a default y-axis to the .plot object (grey here but is not normally visible)<b>Note</b> that <b>.rem()</b> is included and although not vital to create the axis is important for the size of the tick (see nots in API)
 
 ```
 let myAxis = gAxis.yaxisLinear;
 currentFrame.plot()
+	.rem(currentFrame.rem())
 	.call(myYAxis);
 ```
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/default.png)
