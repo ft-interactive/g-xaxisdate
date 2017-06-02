@@ -1,18 +1,17 @@
 import * as d3 from 'd3';
 
 export default function() {
-    let mindate = new Date(1888,2,13);
+    let mindate = new Date(1970,1,1);
     let maxdate = new Date(2017,6,1);
     let scale = d3.scaleTime()
         .domain([mindate,maxdate])
         .range([0,220]);
     let height = 1;
-    let interval ="decade";
-    let rem=10;
+    let interval ="lustrum";
     let minorAxis = true;
-
+    let rem=10;
+    
     function axis(parent) {
-        var parseDate = d3.timeParse("%d/%m")
 
         const xAxis =d3.axisBottom()
             .tickSize(rem*0.75)
@@ -48,6 +47,7 @@ export default function() {
     }
 
     function getTicks(interval) {
+        console.log()
         return {
             "decade":d3.timeYear.every(10),
             "lustrum":d3.timeYear.every(5),
@@ -55,7 +55,8 @@ export default function() {
             "quarters":d3.timeMonth.every(3),
             "months":d3.timeMonth.every(1),
             "weeks":d3.timeWeek.every(1),
-            "days":d3.timeDay.every(1)
+            "days":d3.timeDay.every(1),
+            "hours":d3.timeHour.every(1)
         }[interval]
     }
     function getTicksMinor(interval) {
@@ -64,9 +65,10 @@ export default function() {
             "lustrum":d3.timeYear.every(1),
             "years":d3.timeMonth.every(1),
             "quarters":d3.timeMonth.every(1),
-            "months":d3.timeWeek.every(1),
+            "months":d3.timeDay.every(1),
             "weeks":d3.timeDay.every(1),
-            "days":d3.timeHour.every(1)
+            "days":d3.timeHour.every(1),
+            "hours":d3.timeMinute.every(1)
         }[interval]
     }
 
@@ -78,7 +80,8 @@ export default function() {
             "quarters":d3.timeFormat("%b"),
             "months":d3.timeFormat("%b"),
             "weeks":d3.timeFormat("%b"),
-            "days":d3.timeFormat("%d")
+            "days":d3.timeFormat("%d"),
+            "hours":d3.timeFormat("%I"+":00")
         }[interval]
     }
 
