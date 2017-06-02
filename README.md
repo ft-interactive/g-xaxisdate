@@ -14,7 +14,7 @@ The [d3 library](https://d3js.org/) is already installed in the build
 
 <b>Note</b> The <b>.range()</b> of the x-axis should be determind in part by the <b>.labelWidth()</b> of the y-axis, so it is advisable to ad your y-axis first. See the secton on positioning at [yaxisLinear](https://github.com/ft-interactive/g-yaxislinear).
 
-<b>Intraday</b> charts that cross the date threshold will display 'dead-space', please use the intraday-axis and see reference (to come)
+<b>Intraday</b> charts that cross the date threshold will display 'dead-time', please use the intraday-axis and see reference (to come)
 
 ## Installing
 ### Manually install
@@ -166,7 +166,7 @@ currentFrame.plot()
 
 From Jun 1 2017 to June 6 2017, with no minor axis
 
-<b>Note</b> This axis is only suitable for single daily values and not hourly values such as a share price. This will result is 'dead-space'. Use to come
+<b>Note</b> This axis is only suitable for single daily values and not hourly values such as a share price. This will result is 'dead-time'. Use to come
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
@@ -193,7 +193,7 @@ currentFrame.plot()
 
 From Jun 1 2017 to June 6 2017, with no minor axis
 
-<b>Note</b> For use with hourly values such as a share price but not suitable when crossing the date line to another day. This wil result in 'dead-space'. Use to come
+<b>Note</b> For use with hourly values such as a share price but not suitable when crossing the date line to another day. This wil result in 'dead-time'. Use to come
 
 ```
 const myXAxis = xaxisDate();//sets up yAxis
