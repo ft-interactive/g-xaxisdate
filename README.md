@@ -51,7 +51,7 @@ Set the <b>.range()</b> and the <b>.height()</b> to the dimensions of the <b>.pl
 myXAxis
     .height(currentFrame.dimension().height)
     .range([0,currentFrame.dimension().width])
-    .rem(currentFrame.rem())
+    .tickSize(currentFrame.rem())
 
     currentFrame.plot()
         .call(myXAxis);
