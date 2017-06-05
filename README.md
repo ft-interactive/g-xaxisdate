@@ -218,5 +218,27 @@ const myXAxis = xaxisDate();//sets up yAxis
 
 ### Long ticks (used on Priestly timelines and circle timelines)
 
+From Jun 1 1730 to Jun 1 2017 with a minor axos. In this case the <b>.offset()</b> is set to zero so that the axis is placed at the top of the frame. The <b>.tickSize()</b> is set to the frame size which is what pushes the labels into the correct position at the bottom of the frame. When the <b>.offset()</b> is set to zero the minor axis changes its style to the default axis style of a dotted line and not the solid "baseline" style. The 'baseline' style remains on the major ticks.
+
+
+```
+const myXAxis = xaxisDate();//sets up yAxis
+        const currentFrame = frame[frameName];
+
+        let mindate = new Date(1730,6,1);
+        let maxdate = new Date(2017,6,1);
+
+        myXAxis
+          .offset(0)
+          .domain([mindate,maxdate])
+          .range([0,currentFrame.dimension().width])
+          .interval("jubilee")
+          .minorAxis(true)
+          .tickSize(currentFrame.dimension().height)
+
+        currentFrame.plot()
+            .call(myXAxis);
+```
+
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example06.png)
 
