@@ -32,13 +32,13 @@ Not yet deployed
 
 <b>Note</b> All examples shown are from the web frame style
 
-Add the following code to your index.js to append a default x-axis to the .plot object (grey here but is not normally visible). <b>Note</b> that <b>.rem()</b> is included and although not vital to create the axis it is important for the size of the tick (see nots in API)
+Add the following code to your index.js to append a default x-axis to the .plot object (grey here but is not normally visible). <b>Note</b> that <b>.tickSize()</b> is included and although not vital to create the axis it is important for the size of the tick (see nots in API)
 
 ```
 let myAxis = gAxis.yaxisLinear;
 
 myXAxis
-	.rem(currentFrame.rem())
+	.tickSize(currentFrame.rem())
 
 currentFrame.plot()
 	.call(myYAxis);
@@ -64,7 +64,7 @@ myXAxis
 
 #myAxis<b>.range([Array])</b> defines the axis  range in the same way as you would when creating a normal d3.scaleLinear(). If no <b>.range()</b> is defined the default is [0,220])
 
-#myAxis<b>.height([Number])</b> Defines the distance the x-axis is positioned from the top of its container
+#myAxis<b>.offset([Number])</b> Defines the distance the x-axis is positioned from the top of its container and also determines what style is applied to the lines. If a<b>.offset()</b> is set at zero then it is assumed that the long tick styling is required, see examples
 
 #myAxis<b>.interval([String])</b> Defines the tick interval on the axis (see examples). By default this is set to "lustrum" meaning every five years. It can be set to:
  * "decade" -- every ten years
@@ -84,7 +84,7 @@ myXAxis
  * "weeks" -- minor axis ticks show days
  * "days" -- minor axis ticks show seconds
 
-#myAxis<b>.rem([Number])</b> Easily overlooked but important as it is used to keep the size of the ticks proportional to each frame style. It is the text height of the subtitle e.g. For web frame the text height is 18pt whilst on the print frame the text height is 9.6pt. The size of the ticks are calculated as a factor of <b>.rem</b> and so kept relative to the labels stopping them being disproprtionally large or small
+#myAxis<b>.tickSize([Number])</b> Easily overlooked but important as it is used to keep the size of the ticks proportional to each frame style. It is the text height of the subtitle e.g. For web frame the text height is 18pt whilst on the print frame the text height is 9.6pt. The size of the ticks are calculated as a factor of <b>.rem</b> and so kept relative to the labels stopping them being disproprtionally large or small
 
 ## Examples
 
