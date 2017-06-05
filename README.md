@@ -67,7 +67,7 @@ myXAxis
 #myAxis<b>.offset([Number])</b> Defines the distance the x-axis is positioned from the top of its container and also determines what style is applied to the lines. If a<b>.offset()</b> is set at zero then it is assumed that the long tick styling is required, see examples
 
 #myAxis<b>.interval([String])</b> Defines the tick interval on the axis (see examples). By default this is set to "lustrum" meaning every five years. It can be set to:
- * "centuary" -- every one hundred years
+ * "century" -- every one hundred years
  * "jubilee" -- every fifty years
  * "decade" -- every ten years
  * "lustrum" -- every five years
@@ -78,7 +78,7 @@ myXAxis
  * "days" -- every day
 
  #myAxis<b>.minorAxis([Boolean])</b> Switches the display of the minor axis on or off (see examples). Defailt is treu (on) Depending on the <b>.interval</b> setting the minor axis will deiplay tick lines in the following increments
- * "centuary" -- minor axis ticks show every ten years
+ * "century" -- minor axis ticks show every ten years
  * "jubilee" -- minor axis ticks show every ten years
  * "decade" -- minor axis ticks show years
  * "lustrum" -- minor axis ticks show years
