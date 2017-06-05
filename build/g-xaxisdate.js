@@ -5,18 +5,19 @@
 }(this, function (exports,d3) { 'use strict';
 
     function xaxisDate() {
-        let mindate = new Date(1888,2,13);
+        let mindate = new Date(1970,1,1);
         let maxdate = new Date(2017,6,1);
         let scale = d3.scaleTime()
             .domain([mindate,maxdate])
             .range([0,220]);
-        let height = 100;
-        let interval ="decade";
-        let rem=10;
+        let offset = 0;
+        let interval ="lustrum";
         let minorAxis = true;
+        let rem=10;
+        let tickSize = 0;
 
+        
         function axis(parent) {
-            var parseDate = d3.timeParse("%d/%m/%Y")
 
             const xAxis =d3.axisBottom()
                 .tickSize(rem*0.75)
@@ -30,19 +31,21 @@
                 .tickFormat("")
                 .scale(scale)
 
-            console.log(scale.range()[1])
-
             const xLabel = parent.append("g")
                 .attr("class","axis xAxis")
                 .call(xAxis)
-            xLabel.attr("transform","translate(0,"+(height)+")");
+
+            if (tickSize>rem) {
+                
+            }
+            xLabel.attr("transform","translate(0,"+(offset)+")");
 
             if (minorAxis) {
                 const xLabelMinor = parent.append("g")
                 .attr("class","axis baseline")
                 .call(xMinor)
                 
-                xLabelMinor.attr("transform","translate(0,"+(height)+")");
+                xLabelMinor.attr("transform","translate(0,"+(offset)+")");
             }
 
             let ticks = xLabel.selectAll(".tick");
@@ -54,25 +57,32 @@
         }
 
         function getTicks(interval) {
+            console.log()
             return {
+                "centuary":d3.timeYear.every(100),
+                "jubilee":d3.timeYear.every(50),
                 "decade":d3.timeYear.every(10),
                 "lustrum":d3.timeYear.every(5),
                 "years":d3.timeYear.every(1),
                 "quarters":d3.timeMonth.every(3),
                 "months":d3.timeMonth.every(1),
                 "weeks":d3.timeWeek.every(1),
-                "days":d3.timeDay.every(1)
+                "days":d3.timeDay.every(1),
+                "hours":d3.timeHour.every(1)
             }[interval]
         }
         function getTicksMinor(interval) {
             return {
+                "centuary":d3.timeYear.every(10),
+                "jubilee":d3.timeYear.every(10),
                 "decade":d3.timeYear.every(1),
                 "lustrum":d3.timeYear.every(1),
                 "years":d3.timeMonth.every(1),
                 "quarters":d3.timeMonth.every(1),
-                "months":d3.timeWeek.every(1),
+                "months":d3.timeDay.every(1),
                 "weeks":d3.timeDay.every(1),
-                "days":d3.timeHour.every(1)
+                "days":d3.timeHour.every(1),
+                "hours":d3.timeMinute.every(1)
             }[interval]
         }
 
@@ -84,7 +94,8 @@
                 "quarters":d3.timeFormat("%b"),
                 "months":d3.timeFormat("%b"),
                 "weeks":d3.timeFormat("%b"),
-                "days":d3.timeFormat("%d")
+                "days":d3.timeFormat("%d"),
+                "hours":d3.timeFormat("%I"+":00")
             }[interval]
         }
 
@@ -100,8 +111,8 @@
             scale.range(d);
             return axis;
         };
-        axis.height = (d)=>{
-            height = d;
+        axis.offset = (d)=>{
+            offset = d;
             return axis;
         }
         axis.interval = (d)=>{
@@ -115,6 +126,10 @@
         }
         axis.minorAxis = (d)=>{
             minorAxis = d;
+            return axis;
+        }
+        axis.tickSize = (d)=>{
+            tickSize = d;
             return axis;
         }
         return axis
