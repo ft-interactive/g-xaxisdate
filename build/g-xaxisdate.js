@@ -82,7 +82,7 @@
         function getTicks(interval) {
             console.log()
             return {
-                "centuary":d3.timeYear.every(100),
+                "century":d3.timeYear.every(100),
                 "jubilee":d3.timeYear.every(50),
                 "decade":d3.timeYear.every(10),
                 "lustrum":d3.timeYear.every(5),
@@ -96,7 +96,7 @@
         }
         function getTicksMinor(interval) {
             return {
-                "centuary":d3.timeYear.every(10),
+                "century":d3.timeYear.every(10),
                 "jubilee":d3.timeYear.every(10),
                 "decade":d3.timeYear.every(1),
                 "lustrum":d3.timeYear.every(1),
@@ -111,7 +111,7 @@
 
         function tickFormat(interval) {
             return {
-                "centuary":d3.timeFormat("%y"),
+                "century":d3.timeFormat("%y"),
                 "jubilee":d3.timeFormat("%y"),
                 "decade":d3.timeFormat("%y"),
                 "lustrum":d3.timeFormat("%y"),
