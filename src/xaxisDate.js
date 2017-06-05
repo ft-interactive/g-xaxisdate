@@ -6,10 +6,12 @@ export default function() {
     let scale = d3.scaleTime()
         .domain([mindate,maxdate])
         .range([0,220]);
-    let height = 1;
+    let offset = 0;
     let interval ="lustrum";
     let minorAxis = true;
     let rem=10;
+    let tickSize = 0;
+
     
     function axis(parent) {
 
@@ -28,14 +30,18 @@ export default function() {
         const xLabel = parent.append("g")
             .attr("class","axis xAxis")
             .call(xAxis)
-        xLabel.attr("transform","translate(0,"+(height)+")");
+
+        if (tickSize>rem) {
+            
+        }
+        xLabel.attr("transform","translate(0,"+(offset)+")");
 
         if (minorAxis) {
             const xLabelMinor = parent.append("g")
             .attr("class","axis baseline")
             .call(xMinor)
             
-            xLabelMinor.attr("transform","translate(0,"+(height)+")");
+            xLabelMinor.attr("transform","translate(0,"+(offset)+")");
         }
 
         let ticks = xLabel.selectAll(".tick");
@@ -49,6 +55,8 @@ export default function() {
     function getTicks(interval) {
         console.log()
         return {
+            "centuary":d3.timeYear.every(100),
+            "jubilee":d3.timeYear.every(50),
             "decade":d3.timeYear.every(10),
             "lustrum":d3.timeYear.every(5),
             "years":d3.timeYear.every(1),
@@ -61,6 +69,8 @@ export default function() {
     }
     function getTicksMinor(interval) {
         return {
+            "centuary":d3.timeYear.every(10),
+            "jubilee":d3.timeYear.every(10),
             "decade":d3.timeYear.every(1),
             "lustrum":d3.timeYear.every(1),
             "years":d3.timeMonth.every(1),
@@ -97,8 +107,8 @@ export default function() {
         scale.range(d);
         return axis;
     };
-    axis.height = (d)=>{
-        height = d;
+    axis.offset = (d)=>{
+        offset = d;
         return axis;
     }
     axis.interval = (d)=>{
@@ -112,6 +122,10 @@ export default function() {
     }
     axis.minorAxis = (d)=>{
         minorAxis = d;
+        return axis;
+    }
+    axis.tickSize = (d)=>{
+        tickSize = d;
         return axis;
     }
     return axis
