@@ -13,39 +13,53 @@
         let offset = 0;
         let interval ="lustrum";
         let minorAxis = true;
-        let rem=10;
-        let tickSize = 0;
+        let tickSize=10;
 
-        
         function axis(parent) {
 
             const xAxis =d3.axisBottom()
-                .tickSize(rem*0.75)
+                .tickSize(tickSize*.75)
                 .ticks(getTicks(interval))
                 .tickFormat(tickFormat(interval))
                 .scale(scale)
+            if (offset==0) {
+                xAxis.tickSize(tickSize)
+            }
 
             const xMinor=d3.axisBottom()
-                .tickSize(rem*.3)
+                .tickSize(tickSize*.3)
                 .ticks(getTicksMinor(interval))
                 .tickFormat("")
                 .scale(scale)
+            if (offset==0) {
+                xMinor.tickSize(tickSize)
+            }
 
             const xLabel = parent.append("g")
-                .attr("class","axis xAxis")
+                .attr("class",(d)=>{
+                    if (offset==0) {
+                        return "axis baseline";
+                    }
+                    else {return "axis xAxis"}
+                })
                 .call(xAxis)
-
-            if (tickSize>rem) {
-                
+            if (offset>0) {
+                xLabel.attr("transform","translate(0,"+(offset)+")");
             }
-            xLabel.attr("transform","translate(0,"+(offset)+")");
 
             if (minorAxis) {
                 const xLabelMinor = parent.append("g")
-                .attr("class","axis baseline")
+                .attr("class",(d)=>{
+                    if (offset==0) {
+                        return "axis xAxis";
+                    }
+                    else {return "axis baseline"}
+                })
                 .call(xMinor)
+                if (offset>0) {
+                    xLabelMinor.attr("transform","translate(0,"+(offset)+")");
+                }
                 
-                xLabelMinor.attr("transform","translate(0,"+(offset)+")");
             }
 
             let ticks = xLabel.selectAll(".tick");
@@ -53,6 +67,15 @@
                 d3.select(this)
                 .classed("baseline",true);
             })
+
+            // if (offset==0) {
+            //     console.log(offset)
+            //     let ticks = xLabelMinor.selectAll(".tick");
+            //     ticks.each(function (d) {
+            //         d3.select(this)
+            //         .classed("baseline",false);
+            //     })
+            // }
 
         }
 
@@ -88,6 +111,8 @@
 
         function tickFormat(interval) {
             return {
+                "centuary":d3.timeFormat("%y"),
+                "jubilee":d3.timeFormat("%y"),
                 "decade":d3.timeFormat("%y"),
                 "lustrum":d3.timeFormat("%y"),
                 "years":d3.timeFormat("%y"),
@@ -119,17 +144,13 @@
             interval = d;
             return axis;
         }
-        axis.rem = (d)=>{
-            if(!d) return rem;
-            rem = d;
+        axis.tickSize = (d)=>{
+            if(!d) return tickSize;
+            tickSize = d;
             return axis;
         }
         axis.minorAxis = (d)=>{
             minorAxis = d;
-            return axis;
-        }
-        axis.tickSize = (d)=>{
-            tickSize = d;
             return axis;
         }
         return axis
