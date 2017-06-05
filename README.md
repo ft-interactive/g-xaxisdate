@@ -216,7 +216,7 @@ const myXAxis = xaxisDate();//sets up yAxis
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example05.png)
 
-### Long ticks (used on Priestly timelines and circlr timelines)
+### Long ticks (used on Priestly timelines and circle timelines)
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/example06.png)
 
