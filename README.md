@@ -46,10 +46,10 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/default.png)
 
-Set the <b>.range()</b> and the <b>.height()</b> to the dimensions of the <b>.plot()</b> object to correctly position the axis
+Set the <b>.range()</b> and the <b>.ofsett()</b> to the dimensions of the <b>.plot()</b> object to correctly position the axis
 ```
 myXAxis
-    .height(currentFrame.dimension().height)
+    .offset(currentFrame.dimension().height)
     .range([0,currentFrame.dimension().width])
     .tickSize(currentFrame.rem())
 
