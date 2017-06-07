@@ -226,7 +226,7 @@ const myXAxis = xaxisDate();//sets up yAxis
 
 ### Long ticks (used on Priestly timelines and circle timelines)
 
-From Jun 1 1730 to Jun 1 2017 with a minor axos. In this case the <b>.offset()</b> is set to zero so that the axis is placed at the top of the frame. The <b>.tickSize()</b> is set to the frame height which is what pushes the labels into the correct position at the bottom of the frame. <b>Note</b> When <b>.offset()</b> is set to zero the minor axis changes their style to the default axis style of a dotted line and not the solid 'baseline' style. The 'baseline' style remains on the major ticks.
+From Jun 1 1730 to Jun 1 2017 with a minor axos. In this case the <b>.offset()</b> is set to zero. The <b>.tickSize()</b> is set to the frame height which is what pushes the labels into the correct position at the bottom of the frame. <b>Note</b> when <b>.offset()</b> is set to zero the minor axis change their style to the default axis style of a dotted line and not the solid 'baseline' style. The 'baseline' style remains on the major ticks.
 
 
 ```
