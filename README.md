@@ -92,7 +92,7 @@ myXAxis
 ```
 .tickSize(currentFrame.rem())
 ```
-<b>.rem()</b> is the size of the text in the suntitle in the current frame. Using this to set the <b>.ticksize()</b> keeps them proportional to the current frame stopping ticks being too long on print charts and too short on video. Priestly Timelines and some Circle Timelines use long ticks (see example). <b>Note</b> that the style on long ticks changes automatically when the <b>.offset()</b> is set to zero.
+<b>.rem()</b> returns the height of the text in the suntitle in the current frame. Using this to set the <b>.ticksize()</b> keeps them proportional to the current frame stopping ticks being too long on print charts and too short on video. Priestly timelines and some circle timelines use long ticks (see example). <b>Note</b> that the style on long ticks changes automatically when the <b>.offset()</b> is set to zero.
 
 ## Examples
 
