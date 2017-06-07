@@ -46,7 +46,7 @@ currentFrame.plot()
 
 ![alt tag](https://github.com/ft-interactive/g-xaxisDate/blob/master/images/default.png)
 
-Set the <b>.range()</b> and the <b>.ofsett()</b> to the dimensions of the <b>.plot()</b> object to correctly position the axis
+Set the <b>.range()</b> and the <b>.offsett()</b> to the dimensions of the <b>.plot()</b> object to correctly position the axis
 ```
 myXAxis
     .offset(currentFrame.dimension().height)
@@ -77,7 +77,7 @@ myXAxis
  * "weeks" -- every week
  * "days" -- every day
 
- #myAxis<b>.minorAxis([Boolean])</b> Switches the display of the minor axis on or off (see examples). Defailt is treu (on) Depending on the <b>.interval</b> setting the minor axis will deiplay tick lines in the following increments
+ #myAxis<b>.minorAxis([Boolean])</b> Switches the display of the minor axis on or off (see examples). Defailt is true (on). Depending on the <b>.interval</b> setting the minor axis will deiplay tick lines in the following increments
  * "century" -- minor axis ticks show every ten years
  * "jubilee" -- minor axis ticks show every ten years
  * "decade" -- minor axis ticks show years
@@ -88,7 +88,11 @@ myXAxis
  * "weeks" -- minor axis ticks show days
  * "days" -- minor axis ticks show seconds
 
-#myAxis<b>.tickSize([Number])</b> Easily overlooked but important as it is used to keep the size of the ticks proportional to each frame style. It is the text height of the subtitle e.g. For web frame the text height is 18pt whilst on the print frame the text height is 9.6pt. The size of the ticks are calculated as a factor of <b>.rem</b> and so kept relative to the labels stopping them being disproprtionally large or small
+#myAxis<b>.tickSize([Number])</b> By default this is set to 10 but generally should be set as:
+```
+.tickSize(currentFrame.rem())
+```
+<b>.rem()</b> is the size of the text in the suntitle in the current frame. Using this to set the <b>/ticksize()</b> keeps them proportional to the current frame stopping ticks being too long on print charts and too short on video. Priestly Timelines and some Circle Timelines use long ticks. See example on how to create these. <b>note</b> that the style on long ticks changes automatically when the <b>.offset()</b> is set to zero.
 
 ## Examples
 
