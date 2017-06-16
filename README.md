@@ -90,6 +90,8 @@ myXAxis
  * "weeks" -- minor axis ticks show days
  * "days" -- minor axis ticks show seconds
 
+#myAxis<b>.fullYear([Boolean])</b> Works in conjuction with <b>.interval() </b> when it is set to "years" to force ticks labels to a full year format ( 1995, 1996, 1997 etc) when there is room on wider charts.
+
 #myAxis<b>.tickSize([Number])</b> By default this is set to 10 but generally should be set as:
 ```
 .tickSize(currentFrame.rem())
