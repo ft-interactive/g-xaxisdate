@@ -14,7 +14,6 @@
         let interval ="lustrum";
         let minorAxis = true;
         let tickSize=10;
-        let fullYear=false
 
         function axis(parent) {
 
@@ -131,10 +130,6 @@
         }
         axis.domain = (d)=>{
             scale.domain(d);
-            return axis;
-        };
-        axis.fullYear = (d)=>{
-            fullYear = d
             return axis;
         };
         axis.range = (d)=>{
