@@ -14,6 +14,7 @@
         let interval ="lustrum";
         let minorAxis = true;
         let tickSize=10;
+        let fullYear = false;
 
         function axis(parent) {
 
@@ -82,7 +83,7 @@
         function getTicks(interval) {
             console.log()
             return {
-                "century":d3.timeYear.every(100),
+                "centuary":d3.timeYear.every(100),
                 "jubilee":d3.timeYear.every(50),
                 "decade":d3.timeYear.every(10),
                 "lustrum":d3.timeYear.every(5),
@@ -96,7 +97,7 @@
         }
         function getTicksMinor(interval) {
             return {
-                "century":d3.timeYear.every(10),
+                "centuary":d3.timeYear.every(10),
                 "jubilee":d3.timeYear.every(10),
                 "decade":d3.timeYear.every(1),
                 "lustrum":d3.timeYear.every(1),
@@ -110,12 +111,24 @@
         }
 
         function tickFormat(interval) {
-            return {
-                "century":d3.timeFormat("%y"),
-                "jubilee":d3.timeFormat("%y"),
+                return {
                 "decade":d3.timeFormat("%y"),
                 "lustrum":d3.timeFormat("%y"),
-                "years":d3.timeFormat("%y"),
+                "years":function(d) {
+                    let century=d3.timeFormat("%Y");
+                    if (+century(d) % 100 === 0) {
+                        format=d3.timeFormat("%Y")
+                        return format(d)
+                    }
+                    if (fullYear) {
+                        format=d3.timeFormat("%Y")
+                        return format(d)
+                    }
+                    else {
+                        format=d3.timeFormat("%y");
+                        return format(d)
+                    }
+                },
                 "quarters":d3.timeFormat("%b"),
                 "months":d3.timeFormat("%b"),
                 "weeks":d3.timeFormat("%b"),
@@ -138,6 +151,10 @@
         };
         axis.offset = (d)=>{
             offset = d;
+            return axis;
+        }
+        axis.fullYear = (d)=>{
+            fullYear = d;
             return axis;
         }
         axis.interval = (d)=>{
