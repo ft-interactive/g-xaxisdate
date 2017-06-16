@@ -10,6 +10,7 @@ export default function() {
     let interval ="lustrum";
     let minorAxis = true;
     let tickSize=10;
+    let fullYear = false
 
     function axis(parent) {
 
@@ -64,15 +65,6 @@ export default function() {
             .classed("baseline",true);
         })
 
-        // if (offset==0) {
-        //     console.log(offset)
-        //     let ticks = xLabelMinor.selectAll(".tick");
-        //     ticks.each(function (d) {
-        //         d3.select(this)
-        //         .classed("baseline",false);
-        //     })
-        // }
-
     }
 
     function getTicks(interval) {
@@ -106,12 +98,21 @@ export default function() {
     }
 
     function tickFormat(interval) {
+        let formatFullYear=d3.timeFormat("%Y"),
+        formatYear=d3.timeFormat("%y");
         return {
-            "century":d3.timeFormat("%y"),
-            "jubilee":d3.timeFormat("%y"),
+            "century":d3.timeFormat("%Y"),
+            "jubilee":d3.timeFormat("%Y"),  
             "decade":d3.timeFormat("%y"),
             "lustrum":d3.timeFormat("%y"),
-            "years":d3.timeFormat("%y"),
+            "years": function(d) {
+                if (fullYear || (+formatFullYear(d) % 100 === 0)) {
+                    return formatFullYear(d)
+                }
+                else {
+                    return formatYear(d)
+                }
+            },
             "quarters":d3.timeFormat("%b"),
             "months":d3.timeFormat("%b"),
             "weeks":d3.timeFormat("%b"),
@@ -134,6 +135,10 @@ export default function() {
     };
     axis.offset = (d)=>{
         offset = d;
+        return axis;
+    }
+    axis.fullYear = (d)=>{
+        fullYear = d;
         return axis;
     }
     axis.interval = (d)=>{
