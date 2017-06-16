@@ -2,7 +2,7 @@
 
 Pre styled and positioned date x-axis for use with the FT's g-chartframe architecture as part of the Visual Vocabulary. As the name suggests it creates a date x-axis that can be appended to the .plot obejct in the g-chartframe hopefully eliminating the need to code another standard x-axis.
 
-A centralised axis component for easy maintenance of styles and date formatting accross the full Visual Vocabulary. The axis component also appends the correct script tags for use with the FT Pre-Flight script in Adobe Illustrator.
+A centralised axis module for easy maintenance of styles and date formatting accross the full Visual Vocabulary. The axis module also appends the correct script tags for use with the FT Pre-Flight script in Adobe Illustrator.
 
 Will also work with other builds where the axis is called into an svg.
 
